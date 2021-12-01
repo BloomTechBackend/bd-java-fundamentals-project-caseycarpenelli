@@ -14,7 +14,7 @@ public class Player {
     private Shovel shovel;
     private int power = 1;
     private int health = 10;
-
+    private String name;
     /**
      * Sprint 2 Module 1
      * Saves the player's name. This file should store the name so it can be referenced later. After setting the name,
@@ -22,7 +22,8 @@ public class Player {
      * @param newName - the player's name that will be saved
      */
     public void setName(String newName) {
-
+        this.name = newName;
+        System.out.println("Your name is now " + newName);
     }
 
     /**
@@ -32,7 +33,8 @@ public class Player {
      * @return The name of the player
      */
     public String getName() {
-        return "";
+
+        return name;
     }
 
     /**
@@ -42,6 +44,9 @@ public class Player {
      * @return true if the player's level is enough to open the door.
      */
     public boolean canOpenDoor() {
+        if (level > 4) {
+            return true;
+        }
         return false;
     }
 
