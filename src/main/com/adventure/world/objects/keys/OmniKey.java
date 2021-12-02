@@ -24,11 +24,14 @@ public class OmniKey implements Tangible {
      * @param door - If it's an OmniDoor, this key will configure itself to it. Otherwise, inform the user
      *             that this key can only be used with OmniDoors and do nothing more.
      */
+    @SuppressWarnings("checkstyle:CommentsIndentation")
     @Override
     public void useItem(Tangible door) {
-        if (door instanceof OmniDoor) {
-            //TODO Complete the function
-        }
+        //        if (door instanceof OmniDoor) {
+        //
+        //            //TODO Complete the function
+        //}
+        boolean nothing;
     }
 
     @Override

@@ -1,12 +1,10 @@
 package main.com.adventure.world.scenes.s2_m3;
 
-import main.com.adventure.world.Direction;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.keys.Key;
 import main.com.adventure.world.objects.keys.KeyFactory;
 import main.com.adventure.world.scenes.Scene;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HouseScene implements Scene {
@@ -24,8 +22,9 @@ public class HouseScene implements Scene {
 
     @Override
     public List<String> getPossibleDirections() {
-        ArrayList list = new ArrayList(List.of(Direction.EAST));
-        return list;
+        //ArrayList list = new ArrayList(List.of(Direction.EAST));
+        //return list;
+        return null;
     }
 
     @Override
