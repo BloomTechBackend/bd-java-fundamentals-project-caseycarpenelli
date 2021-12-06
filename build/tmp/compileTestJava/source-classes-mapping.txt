@@ -1,11 +1,9 @@
-com/adventure/sprint2/S2M4Test.java
- com.adventure.sprint2.S2M4Test
-com/adventure/sprint2/S2M3Test.java
- com.adventure.sprint2.S2M3Test
 com/adventure/sprint3/S3M4Test.java
  com.adventure.sprint3.S3M4Test
 com/adventure/sprint3/S3M2Test.java
  com.adventure.sprint3.S3M2Test
+com/adventure/sprint2/S2M3Test.java
+ com.adventure.sprint2.S2M3Test
 com/adventure/sprint2/S2M1Test.java
  com.adventure.sprint2.S2M1Test
 com/adventure/sprint3/S3M3Test.java
@@ -16,3 +14,5 @@ com/adventure/sprint1/S1M2Test.java
  com.adventure.sprint1.S1M2Test
 com/adventure/sprint2/S2M2Test.java
  com.adventure.sprint2.S2M2Test
+com/adventure/sprint2/S2M4Test.java
+ com.adventure.sprint2.S2M4Test

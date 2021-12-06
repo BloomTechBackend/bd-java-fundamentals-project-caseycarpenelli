@@ -25,15 +25,34 @@ public class Key implements Tangible {
 
     //TODO add constructor that takes a level and name, and saves it
 
+    int level = 1;
+    String name = "key";
+
+    public Key(int level, String name) {
+        this.level = level;
+        this.name = name;
+        // getting alot of red lines for reasons i dont know.
+
+    }
+
+    public Key(int level) {
+        this.level = level;
+    }
+
+    public Key() {
+
+    }
+
     public int getLevel() {
         //TODO Fix this so it references the level property instead of 0
-        return 0;
+        return level;
     }
 
     //TODO Fix this so it references the name property instead of "key"
     @Override
     public String getName() {
-        return "key";
+
+        return name;
     }
 
 
