@@ -6,12 +6,18 @@ public class HoleContent {
     private Key content;
     private boolean isCovered = true;
 
-
+    /**
+     * creates Hole Content.
+     * @param key object
+     */
 
     public HoleContent(Key key) {
         this.content = key;
     }
 
+    /**
+     * Hole Content2.
+     */
     public HoleContent() {
 
     }

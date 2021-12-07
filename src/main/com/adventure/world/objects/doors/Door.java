@@ -24,11 +24,20 @@ public class Door implements Tangible {
 
     //TODO Add a constructor that takes an isOpen and level and saves both
 
+    /**
+     * door constructor1.
+     * @param isOpen boolean
+     * @param level int
+     */
 
     public Door(boolean isOpen, int level) {
         this.level = level;
         this.isOpen = isOpen;
     }
+
+    /**
+     * door constructor2.
+     */
 
     public Door() {
     }

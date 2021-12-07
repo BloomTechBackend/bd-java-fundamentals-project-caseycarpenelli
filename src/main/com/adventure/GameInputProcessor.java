@@ -31,7 +31,8 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and blank object
      */
     private Command buildSimpleCommand(String input) {
-        String sCom = input.substring(0, 4);
+        int space = input.indexOf(" ");
+        String sCom = input.substring(0, space);
 
         return new Command(sCom);
     }
@@ -57,19 +58,18 @@ public class GameInputProcessor {
      */
     private Command buildCommandWithObject(String input) {
         int space = input.indexOf(" ");
-        String verb = input.substring(0, space);
-        String object = input.substring(verb.length() + 1);
-        if (!input.contains(" ")) {
-            return new Command(verb);
+        if (input.contains(" ")) {
+            return new Command(input.substring(0, space), input.substring(space + 1));
+        } else if (!input.contains(" ")) {
+            return new Command(input.substring(0, input.length()), "");
+        } else {
+            return new Command(input, input);
         }
-        return new Command(verb, object);
 
-        //invalid isn't working
     }
 
 
     /** DO NOT CHANGE ANYTHING BELOW THIS LINE. **/
-
     /**
      * Gets the next command from the user.
      * @return a command object

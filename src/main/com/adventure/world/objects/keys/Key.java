@@ -28,6 +28,11 @@ public class Key implements Tangible {
     int level = 1;
     String name = "key";
 
+    /**
+     *creates key1.
+     * @param level int
+     * @param name string
+     */
     public Key(int level, String name) {
         this.level = level;
         this.name = name;
@@ -35,9 +40,18 @@ public class Key implements Tangible {
 
     }
 
+    /**
+     * creates key2.
+     * @param level int
+     */
+
     public Key(int level) {
         this.level = level;
     }
+
+    /**
+     * creates key3.
+     */
 
     public Key() {
 
