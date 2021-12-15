@@ -36,7 +36,7 @@ public class Key implements Tangible {
     public Key(int level, String name) {
         this.level = level;
         this.name = name;
-        // getting alot of red lines for reasons i dont know.
+
 
     }
 

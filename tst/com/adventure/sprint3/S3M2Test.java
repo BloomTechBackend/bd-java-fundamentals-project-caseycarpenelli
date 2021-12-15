@@ -81,7 +81,7 @@ public class S3M2Test {
                 "\n" +
                 "I shall be telling this with a sigh\n" +
                 "Somewhere ages and ages hence:\n" +
-                "Two roads diverged in a wood, and I—\n" +
+                "Two roads diverged in a wood, and I\n" +
                 "I took the one less traveled by,\n" +
                 "And that has made all the difference.".trim(), result.trim());
     }
