@@ -1,6 +1,10 @@
 package main.com.adventure;
 
-import main.com.adventure.settings.*;
+import main.com.adventure.settings.Command;
+import main.com.adventure.settings.CommandConstants;
+import main.com.adventure.settings.CommandVerb;
+import main.com.adventure.settings.EmptyCommandException;
+import main.com.adventure.settings.InvalidCommandException;
 
 import java.util.Locale;
 import java.util.Scanner;
