@@ -63,24 +63,24 @@ public class GameInputProcessor {
      * @param input - the input from the user
      * @return - the Command object with the proper verb and object
      */
-    @SuppressWarnings("checkstyle:ReturnCount")
     private Command buildCommandWithObject(String input) {
+        Command command1 = new Command(null);
         int space = input.indexOf(" ");
         try {
-            if (input.equals("")){
+            if (input.equals("")) {
                 return null;
             } else if (input.contains(" ")) {
-                return new Command(CommandVerb.getVerb(input.substring(0, space)), input.substring(space + 1));
+                command1 = new Command(CommandVerb.getVerb(input.substring(0, space)), input.substring(space + 1));
             } else if (!input.contains(" ")) {
-                return new Command(CommandVerb.getVerb(input.substring(0, input.length())), "");
+                command1 = new Command(CommandVerb.getVerb(input.substring(0, input.length())), "");
             } else {
-                return new Command(CommandVerb.getVerb(input), input);
+                command1 = new Command(CommandVerb.getVerb(input), input);
 
             }
         } catch (EmptyCommandException | InvalidCommandException e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return command1;
 
     }
 

@@ -14,7 +14,6 @@ public enum CommandVerb {
     DIG,
     EXAMINE,
     LOOK,
-    EMPTY,
     HELP,
     //Used in Sprint 3 Module 2
     FIGHT,
@@ -27,30 +26,39 @@ public enum CommandVerb {
      * @param verbString - the verb from the user input
      * @return - the CommandVerb associated with the given input.
      */
-    @SuppressWarnings("checkstyle:ReturnCount")
     public static CommandVerb getVerb(String verbString) throws InvalidCommandException, EmptyCommandException {
+        CommandVerb commandVerb;
         if (verbString == null) {
             throw new EmptyCommandException("this command is empty, please try again");
         }
         switch (verbString.toLowerCase(Locale.ROOT)) {
             case "take":
-                return CommandVerb.TAKE;
+                commandVerb = CommandVerb.TAKE;
+                break;
             case "move":
-                return CommandVerb.MOVE;
+                commandVerb = CommandVerb.MOVE;
+                break;
             case "use":
-                return CommandVerb.USE;
+                commandVerb = CommandVerb.USE;
+                break;
             case "dig":
-                return CommandVerb.DIG;
+                commandVerb = CommandVerb.DIG;
+                break;
             case "examine":
-                return CommandVerb.EXAMINE;
+                commandVerb = CommandVerb.EXAMINE;
+                break;
             case "look":
-                return CommandVerb.LOOK;
+                commandVerb = CommandVerb.LOOK;
+                break;
             case "help":
-                return CommandVerb.HELP;
+                commandVerb = CommandVerb.HELP;
+                break;
             case "fight":
-                return CommandVerb.FIGHT;
+                commandVerb = CommandVerb.FIGHT;
+                break;
             case "inventory":
-                return CommandVerb.INVENTORY;
+                commandVerb = CommandVerb.INVENTORY;
+                break;
             case " ":
                 throw new EmptyCommandException("this command is empty, please try again");
             default:
@@ -58,6 +66,7 @@ public enum CommandVerb {
 
 
         }
+        return commandVerb;
     }
 }
 

@@ -4,8 +4,8 @@ main/com/adventure/world/objects/Weapon.java
  main.com.adventure.world.objects.Weapon
 main/com/adventure/world/scenes/IMonsterScene.java
  main.com.adventure.world.scenes.IMonsterScene
-main/com/adventure/settings/Command.java
- main.com.adventure.settings.Command
+main/com/adventure/CombatController.java
+ main.com.adventure.CombatController
 main/com/adventure/world/scenes/s3_m2/MonsterSwordScene.java
  main.com.adventure.world.scenes.s3_m2.MonsterSwordScene
 main/com/adventure/world/scenes/SceneDescriptionNotFoundException.java
@@ -42,8 +42,8 @@ main/com/adventure/world/objects/TangibleListener.java
  main.com.adventure.world.objects.TangibleListener
 main/com/adventure/world/scenes/SceneFactory.java
  main.com.adventure.world.scenes.SceneFactory
-main/com/adventure/settings/CommandVerb.java
- main.com.adventure.settings.CommandVerb
+main/com/adventure/player/Backpack.java
+ main.com.adventure.player.Backpack
 main/com/adventure/world/scenes/s2_m2/ConsoleScene.java
  main.com.adventure.world.scenes.s2_m2.ConsoleScene
 main/com/adventure/world/scenes/s2_m2/HallwayDoorScene.java
@@ -80,12 +80,12 @@ main/com/adventure/settings/EmptyCommandException.java
  main.com.adventure.settings.EmptyCommandException
 main/com/adventure/settings/InvalidCommandException.java
  main.com.adventure.settings.InvalidCommandException
-main/com/adventure/CombatController.java
- main.com.adventure.CombatController
-main/com/adventure/player/Backpack.java
- main.com.adventure.player.Backpack
 main/com/adventure/GameInputProcessor.java
  main.com.adventure.GameInputProcessor
+main/com/adventure/settings/Command.java
+ main.com.adventure.settings.Command
+main/com/adventure/settings/CommandVerb.java
+ main.com.adventure.settings.CommandVerb
 main/com/adventure/settings/GameController.java
  main.com.adventure.settings.GameController
  main.com.adventure.settings.GameController$1
