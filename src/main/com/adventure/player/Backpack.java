@@ -77,7 +77,7 @@ public class Backpack {
             if (items[i] == null) {
                 break;
             }
-            System.out.println(" - " + items[i].getName() + "\n");
+            System.out.println(" - " + items[i].getName());
         }
     }
 }
