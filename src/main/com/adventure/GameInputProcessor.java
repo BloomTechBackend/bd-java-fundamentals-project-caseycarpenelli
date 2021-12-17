@@ -38,7 +38,7 @@ public class GameInputProcessor {
         String sCom = input;
         int space = input.indexOf(" ");
         if (input.contains(" ")) {
-            sCom = input.substring(0, space);
+            sCom = input.toLowerCase(Locale.ROOT).substring(0, space);
         }
         try {
             return new Command(CommandVerb.getVerb(sCom));
@@ -70,20 +70,22 @@ public class GameInputProcessor {
     private Command buildCommandWithObject(String input) {
         Command command1 = new Command(null);
         int space = input.indexOf(" ");
+        String input2 = input.toLowerCase();
         try {
             if (input.equals("")) {
                 return null;
             } else if (input.contains(" ")) {
-                command1 = new Command(CommandVerb.getVerb(input.substring(0, space)), input.substring(space + 1));
+                command1 = new Command(CommandVerb.getVerb(input2.substring(0, space)), input2.substring(space + 1));
             } else if (!input.contains(" ")) {
-                command1 = new Command(CommandVerb.getVerb(input.substring(0, input.length())), "");
+                command1 = new Command(CommandVerb.getVerb(input2.substring(0, input2.length())), "");
             } else {
-                command1 = new Command(CommandVerb.getVerb(input), input);
+                command1 = new Command(CommandVerb.getVerb(input2), input2);
 
             }
         } catch (EmptyCommandException | InvalidCommandException e) {
             System.out.println(e.getMessage());
         }
+
         return command1;
 
     }

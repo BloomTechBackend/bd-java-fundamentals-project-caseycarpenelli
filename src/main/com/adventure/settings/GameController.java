@@ -127,7 +127,7 @@ public class GameController {
             case LOOK:
                 describeCurrentScene();
                 break;
-            case MOVE:
+            case TAKE:
                 move(command.getObjectName());
                 break;
             case HELP:
@@ -142,7 +142,7 @@ public class GameController {
             case EXAMINE:
                 examine(command.getObjectName());
                 break;
-            case TAKE:
+            case MOVE:
                 take(command.getObjectName());
                 break;
             case INVENTORY:

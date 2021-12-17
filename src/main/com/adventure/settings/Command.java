@@ -1,3 +1,4 @@
+
 package main.com.adventure.settings;
 
 public class Command {
