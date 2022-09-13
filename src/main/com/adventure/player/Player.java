@@ -1,19 +1,17 @@
 package main.com.adventure.player;
 
 import main.com.adventure.settings.AppSettings;
-import main.com.adventure.world.objects.Shovel;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.Weapon;
-import main.com.adventure.world.objects.keys.Key;
 
 public class Player {
 
     public int level = 5;
     private int currentLocationIndex = AppSettings.getStartingLocation();
-    private Key key;
-    private Shovel shovel;
+    private Backpack backpack = new Backpack();
     private int power = 1;
     private int health = 10;
+    private String name;
 
     /**
      * Sprint 2 Module 1
@@ -22,7 +20,8 @@ public class Player {
      * @param newName - the player's name that will be saved
      */
     public void setName(String newName) {
-
+        this.name = newName;
+        System.out.println("Your name is now " + newName);
     }
 
     /**
@@ -32,7 +31,8 @@ public class Player {
      * @return The name of the player
      */
     public String getName() {
-        return "";
+
+        return name;
     }
 
     /**
@@ -42,6 +42,9 @@ public class Player {
      * @return true if the player's level is enough to open the door.
      */
     public boolean canOpenDoor() {
+        if (level > 4) {
+            return true;
+        }
         return false;
     }
 
@@ -51,7 +54,7 @@ public class Player {
 
     /**
      * Sprint 2 Module 2
-     * The move function takes two parameters: a direction string and an isValidDirection boolean. The boolean isValidDirection
+     * The move function takes two p: a direction string and an isValidDirection boolean. The boolean isValidDirection
      * tells us if that direction is valid at this point in the game. It will be up to this function to determine if the
      * direction should be processed.
      *
@@ -68,7 +71,18 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        return true;
+        if (direction.equals("WEST") && isValidDirection) {
+            currentLocationIndex--;
+            return true;
+        } else if (direction.equals("EAST") && isValidDirection) {
+            currentLocationIndex++;
+            return true;
+        } else {
+            System.out.println(direction + " is not a valid direction");
+            return false;
+        }
+
+
     }
 
     /**
@@ -79,6 +93,7 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
+        power += item.getPower();
     }
 
     /**
@@ -89,7 +104,11 @@ public class Player {
      */
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
+        if (backpack.getItem(itemName) != null) {
+            return backpack.getItem(itemName);
+        }
         return null;
+
     }
 
     /**
@@ -100,7 +119,8 @@ public class Player {
      */
     public Tangible removeItem(Tangible item) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        backpack.removeItem(item);
+        return item;
     }
 
     /**
@@ -109,6 +129,7 @@ public class Player {
      */
     public void printItems() {
         //TODO Complete this function in Sprint 3 Module 3
+        backpack.printItems();
     }
 
     /**
@@ -117,23 +138,33 @@ public class Player {
      * @param item - item to add.
      */
     public void addItem(Tangible item) {
+        backpack.addItem(item);
+
         //TODO Complete this function
     }
 
-    public void setKey(Key item) {
-        key = item;
+    /**
+     * this sets the key.
+     * @param item is a backpack
+     */
+    public void setKey(Tangible item) {
+        addItem(item);
     }
 
-    public Key getKey() {
-        return key;
+    public Tangible getKey() {
+        return backpack.getItem("key");
     }
 
-    public void setShovel(Shovel item) {
-        shovel = item;
+    /**
+     * this sets the shovel.
+     * @param item is a backpack
+     */
+    public void setShovel(Tangible item) {
+        addItem(item);
     }
 
-    public Shovel getShovel() {
-        return shovel;
+    public Tangible getShovel() {
+        return backpack.getItem("shovel");
     }
 
     //////// DON'T CHANGE THE CODE BELOW. ///////////

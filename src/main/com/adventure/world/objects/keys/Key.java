@@ -25,15 +25,48 @@ public class Key implements Tangible {
 
     //TODO add constructor that takes a level and name, and saves it
 
+    int level = 1;
+    String name = "key";
+
+    /**
+     *creates key1.
+     * @param level int
+     * @param name string
+     */
+    public Key(int level, String name) {
+        this.level = level;
+        this.name = name;
+
+
+    }
+
+    /**
+     * creates key2.
+     * @param level int
+     */
+
+    public Key(int level) {
+        this.level = level;
+    }
+
+    /**
+     * creates key3.
+     */
+
+    public Key() {
+
+    }
+
     public int getLevel() {
         //TODO Fix this so it references the level property instead of 0
-        return 0;
+        return level;
     }
 
     //TODO Fix this so it references the name property instead of "key"
     @Override
     public String getName() {
-        return "key";
+
+        return name;
     }
 
 

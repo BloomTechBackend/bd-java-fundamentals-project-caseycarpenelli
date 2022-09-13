@@ -11,6 +11,8 @@ public class Backpack {
 
     private final Tangible[] items = new Tangible[MAX_CAPACITY];
 
+
+
     /**
      * Adds an item to the backpack array only if there's an empty space in the array.
      * @param item - item to add to the backpack array.
@@ -18,6 +20,12 @@ public class Backpack {
      */
     public boolean addItem(Tangible item) {
         //TODO Complete the function
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] == null) {
+                items[i] = item;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -28,6 +36,11 @@ public class Backpack {
      */
     public Tangible getItem(String name) {
         //TODO Complete the function
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null && name.equals(items[i].getName())) {
+                return items[i];
+            }
+        }
         return null;
     }
 
@@ -37,7 +50,16 @@ public class Backpack {
      * @return - true if the item was removed. Otherwise, false.
      */
     public boolean removeItem(Tangible item) {
-        //TODO Complete the function
+
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] == item) {
+                for (int j = i; j < items.length - 1; j++) {
+                    items[j] = items[j + 1];
+                }
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -50,6 +72,12 @@ public class Backpack {
      * Then each item should be printed with " - " before it.
      */
     public void printItems() {
-        //TODO Complete the function
+        System.out.println("Here are the items in your backpack:");
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] == null) {
+                break;
+            }
+            System.out.println(" - " + items[i].getName());
+        }
     }
 }
